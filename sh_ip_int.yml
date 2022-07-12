@@ -1,14 +1,14 @@
 ---
-- name: Cau hinh Switch
+- name: Cau hinh tren router
   hosts: all
-  gather_facts: no 
+  gather_facts: no
 
   tasks:
-    - name: show ip 
+    - name: Show ip
       ios_command:
-        commands: show ip int brief
+        commands:
+          - show ip int brief
       register: output
 
     - debug: var=output.stdout_lines
-
 
